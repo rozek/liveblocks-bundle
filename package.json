@@ -14,7 +14,7 @@
   },
   "type": "module",
   "scripts": {
-    "build": "rimraf dist && tsc && vite build --sourcemap true --assetsDir . && rm ./dist/index.html && mv ./dist/index.js ./dist/liveblocks-bundle.js && mv ./dist/index.js.map ./dist/liveblocks-bundle.js.map",
+    "build": "rimraf dist && tsc && vite build --sourcemap true --assetsDir . && rm ./dist/index.html && mv ./dist/index.js ./dist/liveblocks-bundle.js && mv ./dist/index.js.map ./dist/liveblocks-bundle.js.map && sed -i '' 's\"sourceMappingURL=index.js.map\"sourceMappingURL=liveblocks-bundle.js.map\"g' ./dist/liveblocks-bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
