@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <script type="module" src="/src/liveblocks-bundle.ts"></script>
+    
+    <script>
+      if (window.liveblocks == null) {
+      	document.addEventListener(
+      	  'liveblocks',(Event) => console.log('"liveblocks" has become available',window.liveblocks)
+      	)
+      }
+    
+      function waitForLiveBlocks () {
+      	if (window.liveblocks == null) {
+      		console.log('waiting for "liveblocks"')
+      		setTimeout(waitForLiveBlocks,100)
+      	} else {
+      		console.log('"liveblocks" has become available',window.liveblocks)
+      	}
+      }
+      waitForLiveBlocks()
+    </script>
+  </body>
+</html>
