@@ -1,0 +1,32 @@
+{
+  "name": "liveblocks-bundle",
+  "version": "0.0.1",
+  "description": "a liveblocks bundle that can be used in no-build environments",
+  "keywords": [
+    "collabs",
+    "crdt"
+  ],
+  "author": "Andreas Rozek <a.rozek@gmx.de> (https://www.rozek.de/)",
+  "license": "MIT",
+  "homepage": "https://github.com/rozek/liveblocks-bundle#readme",
+  "bugs": {
+    "url": "https://github.com/rozek/liveblocks-bundle/issues"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "rimraf dist && tsc && vite build --sourcemap true --assetsDir . && rm ./dist/index.html && mv ./dist/index.js ./dist/liveblocks-bundle.js && mv ./dist/index.js.map ./dist/liveblocks-bundle.js.map",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rozek/liveblocks-bundle.git"
+  },
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.6"
+  },
+  "dependencies": {
+    "@liveblocks/client": "^1.11.3"
+  }
+}
